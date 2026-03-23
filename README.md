@@ -7,6 +7,37 @@ An MDP is typically represented as a tuple (S, A, P, R, γ). Here, S denotes the
 
 In an MDP, the agent observes a state, selects an action, and transitions to a new state while receiving a reward. This interaction continues sequentially, forming a trajectory of states and actions. The primary objective is to identify an optimal policy, which is a mapping from states to actions that maximizes the expected cumulative reward over time (Puterman, 1994).
 
+# Frozen Lake (Slippery Grid) (Markov Decision Process Example 1)
+
+## Overview
+frozenlake.py - this project demonstrates a Markov Decision Process (MDP) using the Frozen Lake environment. The agent learns how to navigate a grid world with uncertain (stochastic) transitions, where movements may not always go as intended due to a slippery surface.
+
+The objective is to reach the goal while avoiding holes by learning an optimal policy through reinforcement learning.
+
+## MDP Components
+- States (S): Grid positions on the lake
+- Actions (A): Left, Right, Up, Down
+- Transition Probability (P): Stochastic (slippery movement)
+- Reward Function (R):
+    - Goal = +1
+    - Hole = 0
+- Other states = 0
+- Discount Factor (γ): Controls importance of future rewards
+
+## Algorithm Used
+Q-Learning
+- Model-free reinforcement learning algorithm
+- Learns optimal action-value function (Q-table)
+- Balances exploration vs exploitation
+
+## Expected Output
+- The agent trains over multiple episodes
+- Q-table is updated based on rewards
+- Final run shows the learned path to the goal
+- Output includes:
+    - Grid rendering
+    - Final reward (1 if successful, 0 otherwise)
+
 ## Summary
 In simple terms, a Markov Decision Process provides a structured way to model decision-making in uncertain, dynamic environments, enabling systems to learn optimal actions through interaction and feedback.
 
